@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+       <!--   <img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="60" height="50" alt="Logo"/> -->
+    </a>
+</nav>
+
+<div class="container mt-5">
+    <div class="col-md-4 mx-auto">
+        <h3 class="text-center">Sign Up</h3>
+        <form th:action="@{/signup}" method="post">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" required name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" required name="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" required name="password" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" required name="confirmPassword" placeholder="Confirm password">
+            </div>
+            <div class="form-group">
+                <label>Select Role</label>
+                <select class="form-control" name="role">
+                    <option value="manager">Manager</option>
+                    <option value="admin">Admin</option>
+                    <option value="employee">Employee</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Register</button>
+        </form>
+        <p class="text-center mt-3">Already have an account? <a th:href="@{/login}">Login here</a></p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

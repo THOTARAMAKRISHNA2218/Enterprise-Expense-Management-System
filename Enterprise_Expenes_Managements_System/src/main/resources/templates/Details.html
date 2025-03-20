@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container */
+        .dashboard-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        /* Heading */
+        h2 {
+            color: #333;
+        }
+
+        /* Role Styling */
+        .role {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin: 10px 0;
+        }
+
+        /* Button Styling */
+        .btn {
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #c70039;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome to the Dashboard</h2>
+
+        <h3 class="role" th:text="${userobject.role}"></h3> <!-- Displays role dynamically -->
+
+        <p>Role: <span th:text="${userobject.role}"></span></p>
+
+            <p class="expense">Expenses: $</p>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn">Logout</button>
+        </form>
+    </div>
+</body>
+</html>

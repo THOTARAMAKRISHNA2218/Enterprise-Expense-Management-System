@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+  <form action="login" method="post">
+<body>
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+       <!--   <img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="60" height="50" alt="Logo"/>-->
+    </a>
+</nav>
+
+<div class="container mt-5">
+    <div class="col-md-4 mx-auto">
+        <h3 class="text-center">Login</h3>
+        <form th:action="@{/login}" method="post">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" required name="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" required name="password" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <p class="text-center mt-3">Don't have an account? <a th:href="@{/signup}">Sign up here</a></p>
+        <p class="text-center"><a href="#">Forgot Password?</a></p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</form>
+</html>
